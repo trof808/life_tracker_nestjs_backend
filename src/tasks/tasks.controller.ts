@@ -1,7 +1,17 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { TaskEntity } from './entities/TaskEntity';
 import { CreateTaskDto } from './dto/CreateTaskDto';
+import { UpdateTaskDto } from './dto/UpdateTaskDto';
+import { UpdateResult } from 'typeorm';
 
 @Controller('tasks')
 export class TasksController {
@@ -15,5 +25,18 @@ export class TasksController {
   @Post()
   async create(@Body() createTaskDto: CreateTaskDto): Promise<TaskEntity> {
     return this.tasksService.create(createTaskDto);
+  }
+
+  @Put(':id')
+  async update(
+    @Param('id') id: number,
+    @Body() updateTaskDto: UpdateTaskDto,
+  ): Promise<UpdateResult> {
+    return this.tasksService.update(id, updateTaskDto);
+  }
+
+  @Delete(':id')
+  async remove(@Param('id') id: number): Promise<void> {
+    return this.tasksService.remove(id);
   }
 }

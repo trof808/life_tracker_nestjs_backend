@@ -19,6 +19,7 @@ import { TaskEntity } from './tasks/entities/TaskEntity';
       entities: [TaskEntity],
       synchronize: true,
       autoLoadEntities: true,
+      logging: true,
     }),
     TasksModule,
   ],
