@@ -17,7 +17,8 @@ export class TasksService {
   async create(task: CreateTaskDto): Promise<TaskEntity> {
     this.logger.log(task);
     try {
-      return this.taskRepository.create(task);
+      const newTask = this.taskRepository.create(task);
+      return this.taskRepository.save(newTask);
     } catch (e) {
       this.logger.log(e);
       return Promise.reject(e);

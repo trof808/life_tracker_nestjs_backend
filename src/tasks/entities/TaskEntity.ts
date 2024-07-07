@@ -11,13 +11,13 @@ export class TaskEntity {
   @Column({ nullable: true })
   description: string;
 
-  @Column({ default: false })
+  @Column({ default: false, nullable: true })
   done: boolean;
 
-  @Column({ name: 'created_at', default: new Date() })
+  @Column({ name: 'created_at', default: new Date(), nullable: true })
   createdAt: Date;
 
-  @Column({ name: 'updated_at', default: new Date() })
+  @Column({ name: 'updated_at', default: new Date(), nullable: true })
   updatedAt: Date;
 
   @Column({ name: 'finished_at', nullable: true })
