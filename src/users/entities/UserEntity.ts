@@ -7,13 +7,13 @@ export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 500, nullable: false })
+  @Column({ length: 500, nullable: true })
   username: string;
 
   @Column({ length: 500, nullable: true })
   telegramId: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: true })
   password: string;
 
   @Column({ name: 'created_at', default: new Date(), nullable: true })

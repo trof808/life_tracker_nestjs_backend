@@ -19,6 +19,7 @@ services:
     container_name: nest-docker-postgres
     environment:
       - PORT=${PORT}
+    env_file: ".env.development"
     ports:
       - '8888:8888'
     depends_on:

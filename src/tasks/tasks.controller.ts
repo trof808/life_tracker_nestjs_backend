@@ -12,7 +12,9 @@ import { TaskEntity } from './entities/TaskEntity';
 import { CreateTaskDto } from './dto/CreateTaskDto';
 import { UpdateTaskDto } from './dto/UpdateTaskDto';
 import { UpdateResult } from 'typeorm';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('tasks')
 @Controller('tasks')
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}

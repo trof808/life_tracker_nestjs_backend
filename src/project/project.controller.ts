@@ -10,7 +10,15 @@ import {
 import { ProjectService } from './project.service';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
+import { ApiHeaders, ApiTags } from '@nestjs/swagger';
 
+@ApiHeaders([
+  {
+    name: 'Authorization',
+    description: 'JWT access_token',
+  },
+])
+@ApiTags('project')
 @Controller('project')
 export class ProjectController {
   constructor(private readonly projectService: ProjectService) {}
