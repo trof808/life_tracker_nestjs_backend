@@ -1,12 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/swagger';
+import { TaskEntity } from '../entities/TaskEntity';
 
-export class CreateTaskDto {
-  @ApiProperty()
-  title: string;
-
-  @ApiProperty()
-  description: string;
-
-  @ApiProperty()
-  toDoDate: Date;
-}
+export class CreateTaskDto extends PartialType(TaskEntity) {}

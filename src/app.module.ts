@@ -2,14 +2,12 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-// import { TasksController } from './tasks/tasks.controller';
-// import { TasksService } from './tasks/tasks.service';
 import { TasksModule } from './tasks/tasks.module';
 import { TaskEntity } from './tasks/entities/TaskEntity';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-// import { UsersService } from './users/users.service';
 import { UserEntity } from './users/entities/UserEntity';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
@@ -28,6 +26,7 @@ import { UserEntity } from './users/entities/UserEntity';
     TasksModule,
     AuthModule,
     UsersModule,
+    ProjectModule,
   ],
   controllers: [AppController],
   providers: [AppService],
