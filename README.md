@@ -4,6 +4,8 @@
 
 ## Запуск
 
+1. Создать .env.development от .env.development.copy
+2. Запустить приложение через docker
 `docker-compose -f docker-compose.dev.yml up --build`
 
 #### pgAdmin
